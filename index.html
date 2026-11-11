@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Global Interior Group — сантехника и котлы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8f9;--surface:#e9eef0;--ink:#12303a;--muted:#4f6a73;--line:#c8d4d8;--accent:#b08d4c;--hero:#12303a;--hero-ink:#f6f8f9;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a1f;--surface:#16262c;--ink:#e8eff1;--muted:#9bb2ba;--line:#2a3f47;--accent:#c9a763;--hero:#0a1317;--hero-ink:#f6f8f9}}
+:root[data-theme="dark"]{--bg:#0e1a1f;--surface:#16262c;--ink:#e8eff1;--muted:#9bb2ba;--line:#2a3f47;--accent:#c9a763;--hero:#0a1317;--hero-ink:#f6f8f9}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Manrope,system-ui,sans-serif}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header{position:absolute;inset:0 0 auto;z-index:2;padding:22px 0;color:var(--hero-ink)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600;text-decoration:none;letter-spacing:.02em}
+nav{display:flex;gap:28px;font-size:15px}
+nav a{text-decoration:none;opacity:.85}nav a:hover{opacity:1}
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;background-color:var(--hero);color:var(--hero-ink);overflow:hidden;
+background-image:linear-gradient(to right,rgba(255,255,255,.07) 1px,transparent 1px),linear-gradient(to bottom,rgba(255,255,255,.07) 1px,transparent 1px);background-size:120px 120px}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,19,23,.1),rgba(10,19,23,.75))}
+.hero .wrap{position:relative;z-index:1;padding-bottom:88px}
+.hero h1{font-size:clamp(44px,8vw,104px);max-width:12ch;font-weight:400}
+.hero p{max-width:46ch;font-size:19px;margin:24px 0 36px;opacity:.88}
+.btn{display:inline-block;padding:15px 30px;background:var(--accent);color:#12303a;text-decoration:none;font-weight:600;font-size:15px;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:inherit;border:1px solid currentColor;margin-left:12px}
+section{padding:104px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:48px;flex-wrap:wrap}
+.head h2{font-size:clamp(34px,5vw,56px)}
+.head p{max-width:44ch;color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cat{position:relative;aspect-ratio:4/5;display:flex;align-items:flex-end;padding:24px;text-decoration:none;color:#f6f8f9;overflow:hidden;background:#2c4c57}
+.cat:nth-child(2){background:#3e6f7d}.cat:nth-child(3){background:#1d3a44}
+.cat:nth-child(4){background:#7a5f2f}.cat:nth-child(5){background:#4a5d63}.cat:nth-child(6){background:#26474f}
+.cat::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 25%,rgba(255,255,255,.18),transparent 55%)}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,19,23,.7))}
+.cat div{position:relative;z-index:1}
+.cat h3{font-size:30px}.cat span{font-size:14px;opacity:.85}
+.cat:hover{transform:translateY(-4px);transition:transform .25s}
+.about{background:var(--surface)}
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.about h2{font-size:clamp(34px,5vw,56px)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:32px 24px;border-top:1px solid var(--line);padding-top:32px;margin-top:8px}
+.facts b{display:block;font:500 40px "Cormorant Garamond",serif;color:var(--accent)}
+.facts span{color:var(--muted);font-size:15px}
+.pro{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pro div{border-top:2px solid var(--ink);padding-top:20px}
+.pro h3{font-size:28px;margin-bottom:8px}.pro p{margin:0;color:var(--muted)}
+.contact{background:var(--hero);color:var(--hero-ink)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px}
+.contact h2{font-size:clamp(34px,5vw,56px)}
+.contact p{opacity:.85}
+.fields{display:grid;gap:14px}
+.fields input,.fields textarea{width:100%;padding:14px 16px;background:transparent;border:1px solid rgba(255,255,255,.3);color:inherit;font:inherit}
+.fields input::placeholder,.fields textarea::placeholder{color:rgba(255,255,255,.55)}
+.brands{display:flex;flex-wrap:wrap;gap:12px 44px;font:500 30px "Cormorant Garamond",serif;color:var(--muted)}
+footer{padding:28px 0;font-size:14px;color:var(--muted)}
+@media (max-width:860px){nav{display:none}.grid{grid-template-columns:1fr 1fr}.about .wrap,.contact .wrap,.pro{grid-template-columns:1fr;gap:40px}section{padding:72px 0}.btn.ghost{margin:12px 0 0}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}.cat{aspect-ratio:3/2}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cat:hover{transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#top">Global Interior Group</a>
+<nav><a href="#catalog">Каталог</a><a href="#brands">Бренды</a><a href="#about">О компании</a><a href="#projects">Проекты</a><a href="#showrooms">Шоурумы</a><a href="#partners">Партнёрам</a><a href="#contact">Контакты</a></nav></div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<h1>Тепло и вода в вашем доме</h1>
+<p>Сантехника и котлы для квартир, домов и больших объектов. Подберём оборудование, привезём и поможем с монтажом.</p>
+<a class="btn" href="#catalog">Смотреть каталог</a><a class="btn ghost" href="#contact">Связаться с нами</a>
+</div></div>
+
+<section id="catalog"><div class="wrap">
+<div class="head"><h2>Каталог</h2><p>Всё для ванной, кухни и отопления в одном месте.</p></div>
+<div class="grid">
+<a class="cat" href="#contact"><div><h3>Смесители</h3><span>Для ванной и кухни</span></div></a>
+<a class="cat" href="#contact"><div><h3>Ванны и раковины</h3><span>Керамика, акрил, камень</span></div></a>
+<a class="cat" href="#contact"><div><h3>Унитазы и инсталляции</h3><span>Подвесные и напольные</span></div></a>
+<a class="cat" href="#contact"><div><h3>Газовые котлы</h3><span>Настенные и напольные</span></div></a>
+<a class="cat" href="#contact"><div><h3>Электрические котлы</h3><span>Для дома и дачи</span></div></a>
+<a class="cat" href="#contact"><div><h3>Радиаторы и трубы</h3><span>Комплектующие для систем</span></div></a>
+</div></div></section>
+
+<section id="brands" style="padding:56px 0"><div class="wrap">
+<div class="head"><h2>Бренды</h2><p>Замените названия на бренды, с которыми вы работаете.</p></div>
+<div class="brands"><span>Бренд 1</span><span>Бренд 2</span><span>Бренд 3</span><span>Бренд 4</span><span>Бренд 5</span><span>Бренд 6</span></div>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+<div><h2>Оборудование, на которое можно положиться</h2></div>
+<div><p>Global Interior Group поставляет сантехнику и котлы для частных клиентов, строительных компаний и дизайнеров интерьеров. Мы помогаем выбрать оборудование под задачу и бюджет и берём на себя доставку.</p>
+<div class="facts">
+<div><b>100+</b><span>брендов и моделей (замените на свои данные)</span></div>
+<div><b>5 лет</b><span>на рынке (замените на свои данные)</span></div>
+<div><b>24 ч</b><span>ответ на запрос</span></div>
+<div><b>Склад</b><span>товары в наличии</span></div>
+</div></div></div></section>
+
+<section id="projects"><div class="wrap">
+<div class="head"><h2>Проекты</h2><p>Примеры объектов, которые мы оснастили. Добавьте свои фото и названия.</p></div>
+<div class="grid">
+<a class="cat" href="#contact"><div><h3>Жилые комплексы</h3><span>Сантехника и отопление</span></div></a>
+<a class="cat" href="#contact"><div><h3>Гостиницы</h3><span>Ванные комнаты и котельные</span></div></a>
+<a class="cat" href="#contact"><div><h3>Офисы и торговые центры</h3><span>Санузлы и системы отопления</span></div></a>
+</div></div></section>
+
+<section id="showrooms" style="background:var(--surface)"><div class="wrap">
+<div class="head"><h2>Шоурумы</h2><p>Приходите посмотреть оборудование вживую.</p></div>
+<div class="pro">
+<div><h3>Главный шоурум</h3><p>Укажите адрес, часы работы и телефон.</p></div>
+<div><h3>Склад и пункт выдачи</h3><p>Укажите адрес склада и условия самовывоза.</p></div>
+</div></div></section>
+
+<section id="partners"><div class="wrap">
+<div class="head"><h2>Для строителей и дизайнеров</h2><p>Работаем с проектами любого масштаба.</p></div>
+<div class="pro">
+<div><h3>Поставки на объекты</h3><p>Комплектуем жилые комплексы, гостиницы и офисы. Согласуем сроки и объёмы заранее.</p></div>
+<div><h3>Условия для партнёров</h3><p>Особые цены для магазинов, монтажных компаний и дизайн-студий.</p></div>
+<div><h3>Склад и доставка</h3><p>Держим популярные позиции в наличии и доставляем в срок.</p></div>
+<div><h3>Обучение</h3><p>Рассказываем партнёрам о товарах, монтаже и подборе котлов.</p></div>
+</div></div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+<div><h2>Расскажите, что вам нужно</h2><p>Напишите нам, и менеджер подготовит подборку и расчёт.</p>
+<p>Телефон: укажите ваш номер<br>Email: укажите вашу почту<br>Адрес: укажите адрес шоурума</p></div>
+<div class="fields">
+<input type="text" placeholder="Ваше имя" aria-label="Ваше имя">
+<input type="text" placeholder="Телефон или email" aria-label="Телефон или email">
+<textarea rows="4" placeholder="Что вы ищете: сантехнику, котёл, комплект для объекта" aria-label="Сообщение"></textarea>
+<button class="btn" type="button">Отправить запрос</button>
+</div></div></section>
+</main>
+<footer><div class="wrap">© 2026 Global Interior Group. Сантехника и котлы.</div></footer>
+</body>
+</html>
